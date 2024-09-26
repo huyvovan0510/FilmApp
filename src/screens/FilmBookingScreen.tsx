@@ -15,6 +15,7 @@ import { Button, Header, SeatSelection } from "@/components";
 import { bookingFilm } from "@/store/slices/booking.slice";
 import { useDispatch } from "react-redux";
 import { navigate } from "@/navigation/navigation.services";
+import { TEST_ID } from "@/testing/test.contant";
 
 type FilmBookingScreenParams = RouteProp<
   RootStackParamList,
@@ -36,7 +37,7 @@ const FilmBookingScreen = () => {
     navigate(APP_ROUTER.FILM_BOOKED_SCREEN);
   };
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={TEST_ID.BOOKING_SCREEN}>
       <ImageBackground
         source={{ uri: filmInfo.thumbnailUrl }}
         style={styles.blurThumbnail}
@@ -62,13 +63,18 @@ const FilmBookingScreen = () => {
         </LinearGradient>
       </ImageBackground>
       <View style={styles.content}>
-        <SeatSelection sitSelected={selectedSeat} onSelectSeat={onSelectSeat} />
+        <SeatSelection
+          sitSelected={selectedSeat}
+          onSelectSeat={onSelectSeat}
+          testID={TEST_ID.SEAT_SELECTION}
+        />
       </View>
       <Button
         title="Book now"
         style={styles.btnBook}
         onPress={onBookTicket}
         disabled={!selectedSeat}
+        testID={TEST_ID.FINISH_BOOK_BTN}
       />
     </View>
   );

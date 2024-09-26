@@ -16,14 +16,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { navigate } from "@/navigation/navigation.services";
 import { APP_ROUTER } from "@/navigation/navigation.constant";
+import { TEST_ID } from "@/testing/test.contant";
 
 interface FilmItemProps {
   item: Film;
   onFavorite?: (data: Film) => void;
   onPress?: (data: Film) => void;
+  testID?: string;
 }
 
-const FilmItem = ({ item }: FilmItemProps) => {
+const FilmItem = ({ item, testID }: FilmItemProps) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state: RootState) => state.favorites);
   const booking = useSelector((state: RootState) => state.booking);
@@ -41,8 +43,12 @@ const FilmItem = ({ item }: FilmItemProps) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Pressable style={styles.favoriteBtn} onPress={onFavorite}>
+    <View style={styles.container} testID={testID}>
+      <Pressable
+        style={styles.favoriteBtn}
+        onPress={onFavorite}
+        testID={`${testID}-${TEST_ID.FAVORITE_BTN}`}
+      >
         <Feather
           name="heart"
           color={isFavorite ? Colors.primary : Colors.secondary}
@@ -68,6 +74,7 @@ const FilmItem = ({ item }: FilmItemProps) => {
         </Text>
 
         <Button
+          testID={`${testID}-${TEST_ID.BOOK_BTN}`}
           title={isBooked ? "Booked" : "Book now"}
           onPress={goToBooking}
           style={styles.bookBtn}
@@ -101,7 +108,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: "hidden",
     marginHorizontal: SPACING.MEDIUM,
-    backgroundColor: "red",
+    backgroundColor: Colors.accent,
   },
   title: {
     ...Typography.Title,

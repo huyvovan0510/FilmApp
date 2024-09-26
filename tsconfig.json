@@ -9,7 +9,8 @@
       "@components/*": ["src/components/*"],
       "@navigation/*": ["src/navigation/*"],
       "@store/*": ["src/store/*"],
-      "@screens/*": ["src/screens/*"]
+      "@screens/*": ["src/screens/*"],
+      "@testing/*": ["src/testing/*"]
     }
   },
   "include": ["src/**/*"],

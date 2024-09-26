@@ -11,6 +11,7 @@ import { HomeCarousel, HorizontalList } from "@/components";
 import { FlashList } from "@shopify/flash-list";
 import Carousel from "react-native-reanimated-carousel";
 import { toggleFavorite } from "@/store/slices/favorite.slice";
+import { TEST_ID } from "@/testing/test.contant";
 
 const keyExtractor = (_: any, index: number) => `${_}`;
 const titles = {
@@ -29,12 +30,23 @@ const HomeScreen = () => {
   const homeSectionData = Array.from(Array(1000).keys());
 
   const renderHomeSection = ({ item, index }: { item: any; index: number }) => {
-    return <HorizontalList title={titles[index] || `Row data - ${index}`} />;
+    return (
+      <HorizontalList
+        title={titles[index] || `Row data - ${index}`}
+        testID={`${TEST_ID.HORIZONTAL_LIST}-${index}`}
+      />
+    );
   };
   return (
-    <View style={{ backgroundColor: Colors.background, flex: 1 }}>
+    <View
+      testID={TEST_ID.HOME_SCREEN}
+      style={{ backgroundColor: Colors.background, flex: 1 }}
+    >
       <FlashList
-        ListHeaderComponent={HomeCarousel}
+        testID={TEST_ID.HOME_MAIN_LIST}
+        ListHeaderComponent={() => (
+          <HomeCarousel testID={TEST_ID.HOME_CAROUSEL} />
+        )}
         data={homeSectionData}
         keyExtractor={keyExtractor}
         renderItem={renderHomeSection}

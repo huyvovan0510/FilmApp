@@ -7,21 +7,29 @@ import { SPACING, THUMBNAIL_WIDTH, Typography } from "@/theme";
 import FilmItem from "./FilmItem";
 import { navigate } from "@/navigation/navigation.services";
 import { APP_ROUTER } from "@/navigation/navigation.constant";
+import { TEST_ID } from "@/testing/test.contant";
 interface HorizontalListProps {
   title: string;
+  testID?: string;
 }
 
 const keyExtractor = (item: Film, index: number) => `${index}-${item.title}`;
 
-const HorizontalList = ({ title }: HorizontalListProps) => {
-  const renderItem = ({ item }: { item: Film }) => {
-    return <FilmItem item={item} />;
+const HorizontalList = ({ title, testID }: HorizontalListProps) => {
+  const renderItem = ({ item, index }: { item: Film; index: number }) => {
+    return (
+      <FilmItem
+        item={item}
+        testID={`${testID}-${TEST_ID.FILM_ITEM}-${index}`}
+      />
+    );
   };
 
   return (
-    <View>
+    <View testID={testID}>
       <Text style={styles.label}>{title}</Text>
       <FlashList
+        // testID={testID}
         horizontal
         data={FilmData}
         keyExtractor={keyExtractor}

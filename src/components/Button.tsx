@@ -14,6 +14,7 @@ interface ButtonProps {
   style?: ViewStyle;
   textStyle?: TextStyle;
   disabled?: boolean;
+  testID?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,9 +23,11 @@ const Button: React.FC<ButtonProps> = ({
   style,
   textStyle,
   disabled = false,
+  testID,
 }) => {
   return (
     <Pressable
+      testID={testID}
       style={[styles.button, style, disabled && styles.disabled]}
       onPress={onPress}
       disabled={disabled}

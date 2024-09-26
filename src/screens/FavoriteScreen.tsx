@@ -16,6 +16,7 @@ import { FlashList } from "@shopify/flash-list";
 import { Film } from "@/interface";
 import { EmptySpace, FavoriteItem, Header } from "@/components";
 import { favoriteEmpty } from "@/assets/images";
+import { TEST_ID } from "@/testing/test.contant";
 
 const keyExtractor = (item: Film, index: number) => `${index}-${item.title}`;
 
@@ -38,9 +39,10 @@ const FavoriteScreen = () => {
   };
 
   return (
-    <Container style={styles.container}>
+    <Container style={styles.container} testID={TEST_ID.FAVORITE_SCREEN}>
       <Header title="Favorites" allowBack={false} />
       <FlashList
+        testID={TEST_ID.FAVORITE_LIST}
         data={listsFavorite}
         keyExtractor={keyExtractor}
         renderItem={renderItem}

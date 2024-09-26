@@ -9,6 +9,7 @@ import { FlashList } from "@shopify/flash-list";
 import { Film } from "@/interface";
 import { EmptySpace, Header, Ticket } from "@/components";
 import { ticket } from "@/assets/images";
+import { TEST_ID } from "@/testing/test.contant";
 
 const keyExtractor = (item: Film, index: number) => `${index}-${item.title}`;
 
@@ -30,11 +31,12 @@ const FilmBookedScreen = () => {
     );
   };
   return (
-    <Container style={styles.container}>
+    <Container style={styles.container} testID={TEST_ID.TICKETS_SCREEN}>
       <Header title=" Your Tickets" allowBack={false} />
       <FlashList
         data={listTicket}
         keyExtractor={keyExtractor}
+        testID={TEST_ID.TICKETS_LIST}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <View style={styles.spacing} />}
         ListEmptyComponent={renderEmptyState}

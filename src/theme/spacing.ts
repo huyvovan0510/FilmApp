@@ -12,8 +12,8 @@ export const SPACING = {
 export const SCREEN_WITH = width;
 export const SCREEN_HEIGHT = height;
 
-export const CAROUSEL_WIDTH = 350;
-export const CAROUSEL_HEIGHT = SCREEN_HEIGHT * 0.6;
+export const CAROUSEL_WIDTH = 370;
+export const CAROUSEL_HEIGHT = SCREEN_HEIGHT * 0.7;
 
 export const THUMBNAIL_WIDTH = 200;
 export const THUMBNAIL_HEIGHT = 280;

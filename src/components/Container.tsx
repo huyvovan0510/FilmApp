@@ -5,11 +5,16 @@ import { Colors } from "@/theme";
 
 interface ContainerProps {
   children?: React.ReactNode;
+  testID?: string;
   style?: StyleProp<ViewStyle>;
 }
-const Container = ({ children, style }: ContainerProps) => {
+const Container = ({ children, style, testID }: ContainerProps) => {
   return (
-    <SafeAreaView style={[styles.container, style]} edges={["top"]}>
+    <SafeAreaView
+      style={[styles.container, style]}
+      edges={["top"]}
+      testID={testID}
+    >
       {children}
     </SafeAreaView>
   );

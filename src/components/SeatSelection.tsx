@@ -1,6 +1,7 @@
 import { View, Text, FlatList, Pressable, StyleSheet } from "react-native";
 import React, { memo } from "react";
 import { Colors, SPACING, Typography } from "@/theme";
+import { TEST_ID } from "@/testing/test.contant";
 
 const SIT_DATA = ["G1", "G2", "G3", "G4", "G5", "H1", "H2", "H3", "H4", "H5"];
 const keyExtractor = (item: string) => `${item}`;
@@ -8,14 +9,16 @@ const keyExtractor = (item: string) => `${item}`;
 interface SeatSelectionProps {
   onSelectSeat: (sit: string) => void;
   sitSelected?: string;
+  testID?: string;
 }
 
 const SeatSelection = memo(
-  ({ onSelectSeat, sitSelected }: SeatSelectionProps) => {
+  ({ onSelectSeat, sitSelected, testID }: SeatSelectionProps) => {
     const renderSeat = ({ item }: { item: string }) => {
       const isSelected = item === sitSelected;
       return (
         <Pressable
+          testID={`${TEST_ID.SEAT}-${item}`}
           style={[
             styles.itemContainer,
             { borderColor: isSelected ? Colors.while : Colors.accent },
@@ -27,7 +30,7 @@ const SeatSelection = memo(
       );
     };
     return (
-      <View style={styles.container}>
+      <View style={styles.container} testID={testID}>
         <Text style={styles.txtTile}>{"Select seat"}</Text>
         <View style={{ alignSelf: "center" }}>
           <FlatList

@@ -11,6 +11,7 @@ import {
 import { APP_ROUTER, COMMON_SCREEN_OPTIONS } from "./navigation.constant";
 import { setNavigatorRef } from "./navigation.services";
 import { Film } from "@/interface";
+import CustomTabBar from "./CustomTabBar";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,7 +27,10 @@ export type RootStackParamList = {
 
 const MainTab = () => {
   return (
-    <Tab.Navigator screenOptions={COMMON_SCREEN_OPTIONS}>
+    <Tab.Navigator
+      screenOptions={COMMON_SCREEN_OPTIONS}
+      tabBar={(props) => <CustomTabBar {...props} />}
+    >
       <Tab.Screen name={APP_ROUTER.HOME_SCREEN} component={HomeScreen} />
       <Tab.Screen
         name={APP_ROUTER.FAVORITE_SCREEN}

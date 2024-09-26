@@ -8,10 +8,10 @@ import { useSharedValue } from "react-native-reanimated";
 import CarouselItem from "./CarouselItem";
 import CarouselBlurBackground from "./CarouselBlurBackground";
 
-const HomeCarousel = () => {
+const HomeCarousel = ({ testID }: { testID: string }) => {
   const activeIndex = useSharedValue(0);
   const renderItem = ({ item }: { item: Film }) => {
-    return <CarouselItem item={item} type="carousel" />;
+    return <CarouselItem item={item} />;
   };
 
   const renderBlurBackground = (item: Film, index: number) => {
@@ -40,6 +40,7 @@ const HomeCarousel = () => {
         data={FilmData}
         renderItem={renderItem}
         mode="parallax"
+        testID={testID}
       />
     </View>
   );
