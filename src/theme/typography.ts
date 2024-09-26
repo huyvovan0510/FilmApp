@@ -1,4 +1,4 @@
-import { Colors } from "./Color";
+import { Colors } from "./themecolor";
 
 export const Typography = {
   Heading: {
@@ -13,7 +13,18 @@ export const Typography = {
     fontSize: 18,
     color: Colors.textPrimary,
   },
+
+  BodyBold: {
+    fontSize: 18,
+    color: Colors.textPrimary,
+    fontWeight: "600",
+  },
   Small: {
+    fontSize: 14,
+    color: Colors.textPrimary,
+  },
+
+  XSmall: {
     fontSize: 14,
     color: Colors.textPrimary,
   },

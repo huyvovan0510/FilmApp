@@ -10,15 +10,18 @@ import {
 } from "@/screens";
 import { APP_ROUTER, COMMON_SCREEN_OPTIONS } from "./navigation.constant";
 import { setNavigatorRef } from "./navigation.services";
+import { Film } from "@/interface";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export type RootStackParamList = {
   [APP_ROUTER.HOME_SCREEN]: undefined;
-  [APP_ROUTER.FAVORITE_SCREEN]: undefined;
   [APP_ROUTER.FILM_BOOKED_SCREEN]: undefined;
-  [APP_ROUTER.FILM_BOOKING_SCREEN]: undefined;
+  [APP_ROUTER.FILM_BOOKING_SCREEN]: {
+    filmInfo: Film;
+  };
+  [APP_ROUTER.FAVORITE_SCREEN]: undefined;
 };
 
 const MainTab = () => {
@@ -45,7 +48,6 @@ const RootNavigation = () => {
         <Stack.Screen
           name={APP_ROUTER.FILM_BOOKING_SCREEN}
           component={FilmBookingScreen}
-          options={{ title: "Book Ticket" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

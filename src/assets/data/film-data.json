@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "The Galactic Odyssey",
+    "description": "A mind-bending journey through space and time as humanity searches for a new home among the stars.",
+    "thumbnailUrl": "https://ik.imagekit.io/storybird/images/cfbab560-3843-4ced-8c0b-8c76881f490c/0_694052591.png"
+  },
+  {
+    "id": "2",
+    "title": "Whispers of the Heart",
+    "description": "A heartwarming tale of first love and self-discovery set in modern-day Tokyo.",
+    "thumbnailUrl": "https://filmartgallery.com/cdn/shop/products/Whisper-of-the-Heart-Vintage-Movie-Poster-Original-Japanese-1-Panel-20x29.jpg?v=1665976422"
+  },
+  {
+    "id": "3",
+    "title": "Neon Nights",
+    "description": "A gritty neo-noir thriller following a detective's dangerous investigation in a futuristic megacity.",
+    "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcbVNuAmhWmpMYV-AqIJVP6VwmrLHA5p3Ljw&s"
+  },
+  {
+    "id": "4",
+    "title": "The Last Samurai's Honor",
+    "description": "An epic historical drama chronicling the final days of the samurai in 19th century Japan.",
+    "thumbnailUrl": "https://m.media-amazon.com/images/M/MV5BMzkyNzQ1Mzc0NV5BMl5BanBnXkFtZTcwODg3MzUzMw@@._V1_.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Laughter in Paradise",
+    "description": "A hilarious comedy about a dysfunctional family's attempts to reconcile during a tropical vacation gone wrong.",
+    "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNVfrH8-zWctZQv3NE2k2W3_ZMcQdovzankw&s"
+  },
+  {
+    "id": "6",
+    "title": "Quantum Leap",
+    "description": "A thrilling sci-fi adventure about a physicist who becomes trapped in time, leaping into different bodies throughout history.",
+    "thumbnailUrl": "https://m.media-amazon.com/images/I/81lkaejsxyL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "id": "7",
+    "title": "Echoes of Eternity",
+    "description": "A poignant drama exploring the impact of a single decision across multiple generations of a family.",
+    "thumbnailUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1704580738i/204960311.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Cyberpunk Revolution",
+    "description": "An action-packed cyber-thriller set in a world where human augmentation has blurred the lines between man and machine.",
+    "thumbnailUrl": "https://images.playground.com/ee4c311501d54974acd715d38a0bd213.jpeg"
+  },
+  {
+    "id": "9",
+    "title": "Savannah Sunrise",
+    "description": "A touching coming-of-age story about a young girl's summer adventure in the African savannah.",
+    "thumbnailUrl": "https://m.media-amazon.com/images/S/pv-target-images/1cb0dfb985e9a9ee3972981e64bcc8a2ffe7f94c948106c970e487b4405577f0.jpg"
+  },
+  {
+    "id": "10",
+    "title": "The Alchemist's Secret",
+    "description": "A mystical journey through medieval Europe as an apprentice alchemist searches for the philosopher's stone.",
+    "thumbnailUrl": "https://m.media-amazon.com/images/I/51wdLLqfCbL._SY780_.jpg"
+  }
+]
